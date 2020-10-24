@@ -7,5 +7,5 @@ while:
 		inc		rax
 		mov		cl, byte [rdi+rax]
 		cmp		cl, 0
-    	jne		while
-    	ret
+		jne		while
+		ret
