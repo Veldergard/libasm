@@ -1,5 +1,3 @@
-section .data
-
 section .text
 	global _ft_strlen
 
@@ -9,5 +7,5 @@ while:
 		inc		rax
 		mov		cl, byte [rdi+rax]
 		cmp		cl, 0
-    	jne		loop
+    	jne		while
     	ret
