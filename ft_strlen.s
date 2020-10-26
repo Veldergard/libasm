@@ -5,7 +5,6 @@ _ft_strlen:
 		mov		rax, -1
 while:
 		inc		rax
-		mov		cl, byte [rdi+rax]
-		cmp		cl, 0
-		jne		while
+		cmp		byte [rdi+rax], 0
+		jne		while					; if not end of string
 		ret

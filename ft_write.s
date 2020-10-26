@@ -5,12 +5,9 @@ _ft_write:
 		mov		rax, 0x02000004
 		syscall
 		jc exit_error
-		jmp exit
+		mov		rax, r8
+		ret
 
 exit_error:
 		mov		rax, -1
-		ret
-
-exit:
-		mov		rax, r8
 		ret
