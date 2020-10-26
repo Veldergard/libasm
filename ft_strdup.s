@@ -12,10 +12,10 @@ _ft_strdup:
 		inc rdi
 		call _malloc
 		jc exit_error
-		mov rdi rax
+		mov rdi, rax
 		pop rsi
 		call _ft_strcpy
-		mov rax rdi
+		mov rax, rdi
 		ret
 
 exit_error:

@@ -6,7 +6,7 @@
 /*   By: olaurine <olaurine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 16:40:24 by olaurine          #+#    #+#             */
-/*   Updated: 2020/10/26 19:39:01 by olaurine         ###   ########.fr       */
+/*   Updated: 2020/10/26 20:01:31 by olaurine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define FT_STR "test string test string test string test string test string"
 #define FT_LSTR FT_STR FT_STR FT_STR FT_STR FT_STR FT_STR FT_STR FT_STR FT_STR
@@ -185,6 +186,34 @@ void	test_read()
 void	test_dup()
 {
 	printf("-------FT_STRDUP TESTING-------\n");
+	char	*src1 = "test";
+	char	*src2 = "";
+	char	*src3 = FT_LLSTR;
+	char	*lol;
+
+	printf("orig:\n%s\n", src1);
+	lol = strdup(src1);
+	free(lol);
+	printf(" SYS:\n%s\n", lol);
+	lol = ft_strdup(src1);
+	free(lol);
+	printf("  FT:\n%s\n\n", lol);
+
+	printf("orig:\n%s\n", src2);
+	lol = strdup(src2);
+	free(lol);
+	printf(" SYS:\n%s\n", lol);
+	lol = ft_strdup(src2);
+	free(lol);
+	printf("  FT:\n%s\n\n", lol);
+
+	printf("orig:\n%s\n", src3);
+	lol = strdup(src3);
+	free(lol);
+	printf(" SYS:\n%s\n", lol);
+	lol = ft_strdup(src3);
+	free(lol);
+	printf("  FT:\n%s\n\n", lol);
 	printf("--------------END--------------\n");
 }
 
@@ -192,8 +221,8 @@ int		main()
 {
 	// test_len();
 	// test_cpy();
-	test_cmp();
+	// test_cmp();
 	// test_write();
 	// test_read();
-	// test_dup();
+	test_dup();
 }
