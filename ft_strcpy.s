@@ -7,9 +7,9 @@ _ft_strcpy:
 		mov		rcx, -1
 while:
 		inc		rcx
-		mov		r8b, [rsi+rcx]
-		mov		[rdi+rcx], r8b
-		cmp		byte [rdi+rax], 0
+		mov		r8b, byte [rsi+rcx]
+		mov		byte [rdi+rcx], r8b
+		cmp		byte [rdi+rcx], 0
 		jne		while					; if not end of string
 exit:
 		pop		r8

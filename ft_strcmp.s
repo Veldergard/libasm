@@ -12,7 +12,10 @@ while:
 		cmp		byte [rdi+rcx], 0
 		jne		while					; if not end of string
 exit:
-		mov		rax, [rdi+rcx]
-		sub		rax, [rsi+rcx]
+		mov		rax, 0
+		mov		al, [rdi+rcx]
+		mov		r8, 0
+		mov		r8b, [rsi+rcx]
+		sub		rax, r8
 		pop		r8
 		ret

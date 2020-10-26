@@ -6,7 +6,7 @@
 /*   By: olaurine <olaurine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 16:40:24 by olaurine          #+#    #+#             */
-/*   Updated: 2020/10/26 17:57:21 by olaurine         ###   ########.fr       */
+/*   Updated: 2020/10/26 19:39:01 by olaurine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,57 @@ void	test_len()
 void	test_cpy()
 {
 	printf("------FT_STRCPY TESTING------\n");
+	char	*src1 = "test";
+	char	*src2 = "";
+	char	*src3 = FT_LLSTR;
+	char	dst11[ft_strlen(src1) + 1];
+	char	dst12[ft_strlen(src1) + 1];
+	char	dst21[ft_strlen(src2) + 1];
+	char	dst22[ft_strlen(src2) + 1];
+	char	dst31[ft_strlen(src3) + 1];
+	char	dst32[ft_strlen(src3) + 1];
+
+	printf("orig:\n%s\n", src1);
+	printf(" SYS:\n%s\n", strcpy(dst11, src1));
+	printf("  FT:\n%s\n\n", ft_strcpy(dst12, src1));
+
+	printf("orig:\n%s\n", src2);
+	printf(" SYS:\n%s\n", strcpy(dst21, src2));
+	printf("  FT:\n%s\n\n", ft_strcpy(dst22, src2));
+
+	printf("orig:\n%s\n", src3);
+	printf(" SYS:\n%s\n", strcpy(dst31, src3));
+	printf("  FT:\n%s\n\n", ft_strcpy(dst32, src3));
 	printf("-------------END-------------\n\n\n\n\n\n");
 }
 
 void	test_cmp()
 {
 	printf("------FT_STRCMP TESTING------\n");
+	char	*s11 = "test";
+	char	*s12 = "test";
+	char	*s21 = "";
+	char	*s22 = "0";
+	char	*s31 = FT_LLSTR;
+	char	*s32 = FT_LLSTR "ihihihihi";
+	char	*s41 = "0";
+	char	*s42 = "";
+
+	printf("s1:\n%s\ns2:\n%s\n", s11, s12);
+	printf(" SYS: %d\n", strcmp(s11, s12));
+	printf("  FT: %d\n\n", ft_strcmp(s11, s12));
+
+	printf("s1:\n%s\ns2:\n%s\n", s21, s22);
+	printf(" SYS: %d\n", strcmp(s21, s22));
+	printf("  FT: %d\n\n", ft_strcmp(s21, s22));
+
+	printf("s1:\n%s\ns2:\n%s\n", s31, s32);
+	printf(" SYS: %d\n", strcmp(s31, s32));
+	printf("  FT: %d\n\n", ft_strcmp(s31, s32));
+
+	printf("s1:\n%s\ns2:\n%s\n", s41, s42);
+	printf(" SYS: %d\n", strcmp(s41, s42));
+	printf("  FT: %d\n\n", ft_strcmp(s41, s42));
 	printf("-------------END-------------\n\n\n\n\n\n");
 }
 
@@ -145,10 +190,10 @@ void	test_dup()
 
 int		main()
 {
-	test_len();
-	test_cpy();
+	// test_len();
+	// test_cpy();
 	test_cmp();
-	test_write();
-	test_read();
-	test_dup();
+	// test_write();
+	// test_read();
+	// test_dup();
 }
